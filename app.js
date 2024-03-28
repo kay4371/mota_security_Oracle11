@@ -5771,7 +5771,7 @@ app.get('/get_new__visitor_details', async function (req, res) {
 
 
 
-app.get('https://mota-security-oracle.onrender.com/get_expected_visitors', async function (req, res) {
+app.get('/get_expected_visitors', async function (req, res) {
   try {
     await client.connect();
     const database = client.db('olukayode_sage');
@@ -5793,7 +5793,7 @@ app.get('https://mota-security-oracle.onrender.com/get_expected_visitors', async
 
 
 
-app.post('https://mota-security-oracle.onrender.com/notify_the_host', (req, res) => {
+app.post('/notify_the_host', (req, res) => {
   // Extract data from the request body
   const { name, whomToSee, company, purposeOfVisit, phoneNumber, status, date, time } = req.body;
 
@@ -5814,7 +5814,7 @@ app.post('https://mota-security-oracle.onrender.com/notify_the_host', (req, res)
 
 
 
-app.get('https://mota-security-oracle.onrender.com/get_driver_details', async function (req, res) {
+app.get('/get_driver_details', async function (req, res) {
   try {
     await client.connect();
     const database = client.db('olukayode_sage');
@@ -5835,7 +5835,7 @@ app.get('https://mota-security-oracle.onrender.com/get_driver_details', async fu
 
 ////////////////////////perfect use
 
-app.post('https://mota-security-oracle.onrender.com/movement_history', async function (req, res) {
+app.post('/movement_history', async function (req, res) {
   const driverDetails = {
     driver_name: req.body.driver_name,
     armed_guard: req.body.armed_guard,
@@ -5871,7 +5871,7 @@ app.post('https://mota-security-oracle.onrender.com/movement_history', async fun
 
 
 
-app.get('https://mota-security-oracle.onrender.com/get_movement_history', async function (req, res) {
+app.get('/get_movement_history', async function (req, res) {
   try {
     await client.connect();
     const database = client.db('olukayode_sage');
@@ -5899,7 +5899,7 @@ const movementDataCollection = database.collection('movement_history_database');
 // Set up the Express app
 
 
-app.get('https://mota-security-oracle.onrender.com/get_visitor_counts', async (req, res) => {
+app.get('/get_visitor_counts', async (req, res) => {
   try {
     await client.connect();
     const totalCount = await visitorDataCollection.countDocuments();
@@ -5921,7 +5921,7 @@ app.get('https://mota-security-oracle.onrender.com/get_visitor_counts', async (r
 
 
 
-app.get('https://mota-security-oracle.onrender.com/get_movements_counts', async (req, res) => {
+app.get('/get_movements_counts', async (req, res) => {
   try {
     await client.connect();
     const totalCount = await movementDataCollection.countDocuments();
